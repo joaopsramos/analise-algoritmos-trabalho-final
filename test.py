@@ -27,6 +27,14 @@ class TestAlgorithms(unittest.TestCase):
         algorithms.insertion_sort(shuffled_arr)
         self.assertEqual(shuffled_arr, sorted_arr)
 
+    def test_merge_sort(self):
+        algorithms.merge_sort(shuffled_arr)
+        self.assertEqual(shuffled_arr, sorted_arr)
+
+    def test_heap_sort(self):
+        algorithms.heap_sort(shuffled_arr)
+        self.assertEqual(shuffled_arr, sorted_arr)
+
     def test_quick_sort(self):
         algorithms.quick_sort(shuffled_arr)
         self.assertEqual(shuffled_arr, sorted_arr)

@@ -9,6 +9,8 @@ ALGORITHMS = [
     algorithms.improved_bubble_sort,
     algorithms.selection_sort,
     algorithms.insertion_sort,
+    algorithms.merge_sort,
+    algorithms.heap_sort,
     algorithms.quick_sort,
 ]
 
