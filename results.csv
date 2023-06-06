@@ -1,5 +1,11 @@
 Tamanho,Nome,Duração (ms),Iterações
-10,Bubble sort,0.010479,90
-10,Bubble sort melhorado,0.007834,54
-10,Selection sort,0.006362,55
-10,Insertion sort,0.005761,33
+10,Bubble sort,0.014647,90
+10,Bubble sort melhorado,0.009848,54
+10,Selection sort,0.008456,55
+10,Insertion sort,0.006292,29
+10,Quick sort,0.012414,13
+100,Bubble sort,0.829824,9900
+100,Bubble sort melhorado,0.507392,5049
+100,Selection sort,0.314517,5050
+100,Insertion sort,0.37402,2610
+100,Quick sort,0.098026,141

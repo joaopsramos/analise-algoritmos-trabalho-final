@@ -27,6 +27,10 @@ class TestAlgorithms(unittest.TestCase):
         algorithms.insertion_sort(shuffled_arr)
         self.assertEqual(shuffled_arr, sorted_arr)
 
+    def test_quick_sort(self):
+        algorithms.quick_sort(shuffled_arr)
+        self.assertEqual(shuffled_arr, sorted_arr)
+
 
 if __name__ == '__main__':
     unittest.main()
