@@ -1,13 +1,15 @@
 import csv
 import algorithms
+import random
 from result import Result
-from random import shuffle
 
 # SIZES = [ 1_000, 10_000, 50_000, 100_000, 500_000, 1_000_000]
-SIZES = [10, 100]
+SIZES = [10]
 ALGORITHMS = [
     {"name": "Bubble sort", "callback": algorithms.bubble_sort},
-    {"name": "Bubble sort melhorado", "callback": algorithms.improved_bubble_sort}
+    {"name": "Bubble sort melhorado", "callback": algorithms.improved_bubble_sort},
+    {"name": "Selection sort", "callback": algorithms.selection_sort},
+    {"name": "Insertion sort", "callback": algorithms.insertion_sort}
 ]
 
 
@@ -17,9 +19,9 @@ def main():
     for size in SIZES:
         print("-------------------------")
         print(f"Tamanho do array: {size}")
-        arr = [*range(size * 2)]
+        arr = [*range(size)]
 
-        shuffle(arr)
+        random.shuffle(arr)
 
         for algorithm in ALGORITHMS:
             print(algorithm['name'])
