@@ -1,15 +1,29 @@
-Tamanho,Nome,Duração (ms),Iterações
-10,Bubble sort,0.010399,90
-10,Bubble sort melhorado,0.007294,54
-10,Selection sort,0.00547,55
-10,Insertion sort,0.005871,40
-10,Merge sort,0.015599,41
-10,Heap sort,0.01059,28
-10,Quick sort,0.008626,13
-100,Bubble sort,0.824672,9900
-100,Bubble sort melhorado,0.526146,5049
-100,Selection sort,0.305829,5050
-100,Insertion sort,0.377205,2720
-100,Merge sort,0.18004,749
-100,Heap sort,0.168198,298
-100,Quick sort,0.071596,135
+Tamanho,Nome,Tipo de ordenação,Duração (ms),Iterações
+10,Bubble sort,Ordenado,0.011371,90
+10,Bubble sort melhorado,Ordenado,0.002324,10
+10,Selection sort,Ordenado,0.008877,55
+10,Insertion sort,Ordenado,0.001904,10
+10,Merge sort,Ordenado,0.020539,34
+10,Heap sort,Ordenado,0.022763,28
+10,Quick sort,Ordenado,0.019227,19
+10,Bubble sort,Invertido,0.017242,90
+10,Bubble sort melhorado,Invertido,0.013596,54
+10,Selection sort,Invertido,0.009287,55
+10,Insertion sort,Invertido,0.012684,55
+10,Merge sort,Invertido,0.022142,38
+10,Heap sort,Invertido,0.015559,28
+10,Quick sort,Invertido,0.015329,19
+10,Bubble sort,Quase ordenado,0.011792,90
+10,Bubble sort melhorado,Quase ordenado,0.008716,54
+10,Selection sort,Quase ordenado,0.008756,55
+10,Insertion sort,Quase ordenado,0.002875,11
+10,Merge sort,Quase ordenado,0.022091,35
+10,Heap sort,Quase ordenado,0.020528,28
+10,Quick sort,Quase ordenado,0.015749,17
+10,Bubble sort,Desordenado,0.014477,90
+10,Bubble sort melhorado,Desordenado,0.011502,54
+10,Selection sort,Desordenado,0.008867,55
+10,Insertion sort,Desordenado,0.007705,32
+10,Merge sort,Desordenado,0.024215,41
+10,Heap sort,Desordenado,0.017493,28
+10,Quick sort,Desordenado,0.011692,15
