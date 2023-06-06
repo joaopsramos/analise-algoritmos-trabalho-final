@@ -1,7 +1,11 @@
 import time
+from result import Result
 
 
 def bubble_sort(arr):
+    name = "Bubble sort"
+    print(name)
+
     time_ns = time.time_ns()
     iterations = 0
 
@@ -16,10 +20,13 @@ def bubble_sort(arr):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-    return (time.time_ns() - time_ns, iterations)
+    return Result(n, name, time.time_ns() - time_ns, iterations)
 
 
 def improved_bubble_sort(arr):
+    name = "Bubble sort melhorado"
+    print(name)
+
     time_ns = time.time_ns()
     iterations = 0
 
@@ -40,10 +47,13 @@ def improved_bubble_sort(arr):
             print(arr)
             return (time.time_ns() - time_ns, iterations)
 
-    return (time.time_ns() - time_ns, iterations)
+    return Result(n, name, time.time_ns() - time_ns, iterations)
 
 
 def selection_sort(arr):
+    name = "Selection sort"
+    print(name)
+
     time_ns = time.time_ns()
     iterations = 0
 
@@ -62,10 +72,13 @@ def selection_sort(arr):
 
         arr[i], arr[min] = arr[min], arr[i]
 
-    return (time.time_ns() - time_ns, iterations)
+    return Result(n, name, time.time_ns() - time_ns, iterations)
 
 
 def insertion_sort(arr):
+    name = "Insertion sort"
+    print(name)
+
     time_ns = time.time_ns()
     iterations = 0
 
@@ -82,6 +95,4 @@ def insertion_sort(arr):
             arr[j], arr[j - 1] = arr[j - 1], arr[j]
             j -= 1
 
-    return (time.time_ns() - time_ns, iterations)
-
-
+    return Result(n, name, time.time_ns() - time_ns, iterations)
