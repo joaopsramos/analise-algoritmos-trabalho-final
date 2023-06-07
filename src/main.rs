@@ -7,16 +7,18 @@ use std::{
     time::Instant,
 };
 
-use algorithms::{bubble_sort, heap_sort, insertion_sort, merge_sort, quick_sort, selection_sort};
+use algorithms::{
+    bubble_sort, heap_sort, improved_bubble_sort, improved_selection_sort, insertion_sort,
+    merge_sort, quick_sort, selection_sort,
+};
 use rand::{seq::SliceRandom, thread_rng};
 
-use crate::algorithm_result::AlgorithmResult;
+use algorithm_result::AlgorithmResult;
 
 const SIZES: [i32; 6] = [1_000, 10_000, 50_000, 100_000, 500_000, 1_000_000];
-// const SIZES: [i32; 1] = [1_000_000];
 
 type SorterFn = fn(i32) -> Vec<i32>;
-type AlgorithmFn = fn(&mut [i32]) -> i32;
+type AlgorithmFn = fn(&mut [i32]) -> i64;
 type Summary = Vec<AlgorithmResult>;
 
 fn main() {
@@ -28,7 +30,9 @@ fn main() {
     ];
     let algorithms = [
         ("Bubble sort", bubble_sort as AlgorithmFn),
+        ("Bubble sort melhorado", improved_bubble_sort),
         ("Selection sort", selection_sort),
+        ("Selection sort melhorado", improved_selection_sort),
         ("Insertion sort", insertion_sort),
         ("Merge sort", merge_sort as AlgorithmFn),
         ("Heap sort", heap_sort),
@@ -54,6 +58,7 @@ fn main() {
                     arr_size: size,
                     sort_type: sort_type.to_owned(),
                     duration: now.elapsed(),
+                    duration_ms: (now.elapsed().as_nanos()) as f64 / 1000000.0,
                     iterations,
                 })
             }
@@ -66,16 +71,19 @@ fn main() {
 fn save_to_csv(results: Summary) {
     let file = File::create("./results.csv").unwrap();
     let mut file = LineWriter::new(file);
-    file.write_all("Tamanho,Algoritmo,Tipo de ordenação,Duração,Iterações\n".as_bytes())
-        .unwrap();
+    file.write_all(
+        "Tamanho,Algoritmo,Tipo de ordenação,Duração,Duração (ms),Iterações\n".as_bytes(),
+    )
+    .unwrap();
 
     for algorithm_result in results {
         let row = format!(
-            "{},{},{},{:.2?},{}\n",
+            "{},{},{},{:.2?},{},{}\n",
             algorithm_result.arr_size,
             algorithm_result.algorithm,
             algorithm_result.sort_type,
             algorithm_result.duration,
+            algorithm_result.duration_ms,
             algorithm_result.iterations
         );
 

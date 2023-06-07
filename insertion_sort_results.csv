@@ -1,0 +1,26 @@
+Tamanho,Algoritmo,Tipo de ordenação,Duração,Duração (ms),Iterações
+1000,Insertion sort,Ordenado,1.95µs,0.001993,1000
+1000,Insertion sort,Invertido,219.94µs,0.219966,500500
+1000,Insertion sort,Quase ordenado,14.73µs,0.014748,28900
+1000,Insertion sort,Aleatório,114.16µs,0.114186,252786
+10000,Insertion sort,Ordenado,14.50µs,0.014527,10000
+10000,Insertion sort,Invertido,22.13ms,22.126437,50005000
+10000,Insertion sort,Quase ordenado,1.26ms,1.2637,2810808
+10000,Insertion sort,Aleatório,11.17ms,11.16729,25038741
+50000,Insertion sort,Ordenado,88.65µs,0.088678,50000
+50000,Insertion sort,Invertido,565.55ms,565.552919,1250025000
+50000,Insertion sort,Quase ordenado,32.93ms,32.930328,69484212
+50000,Insertion sort,Aleatório,281.35ms,281.353975,629319105
+100000,Insertion sort,Ordenado,181.99µs,0.182024,100000
+100000,Insertion sort,Invertido,2.25s,2251.651792,5000050000
+100000,Insertion sort,Quase ordenado,124.16ms,124.156489,277729313
+100000,Insertion sort,Aleatório,1.13s,1131.935617,2502549350
+500000,Insertion sort,Ordenado,867.17µs,0.867211,500000
+500000,Insertion sort,Invertido,56.02s,56020.982035,125000250000
+500000,Insertion sort,Quase ordenado,3.11s,3109.423901,6934491469
+500000,Insertion sort,Aleatório,28.03s,28030.859101,62611964984
+1000000,Insertion sort,Ordenado,1.34ms,1.338742,1000000
+1000000,Insertion sort,Invertido,229.64s,229640.210774,500000500000
+1000000,Insertion sort,Quase ordenado,12.75s,12751.171539,27778520772
+1000000,Insertion sort,Aleatório,115.10s,115102.979897,250026546054
+
