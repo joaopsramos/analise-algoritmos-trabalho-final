@@ -180,35 +180,38 @@ def quick_sort(arr):
     time_ns = time.time_ns()
     iterations = 0
 
-    n = len(arr)
+    stack = [(0, len(arr) - 1)]
 
-    iterations = do_quick_sort(arr, 0, n - 1, iterations)
+    while stack:
+        iterations += 1
+
+        start, end = stack.pop()
+        if start >= end:
+            continue
+        
+        pivot = arr[start]
+        left = start + 1
+        right = end
+
+        while True:
+            iterations += 1
+
+            while left <= right and arr[left] <= pivot:
+                iterations += 1
+                left += 1
+            while left <= right and arr[right] >= pivot:
+                iterations += 1
+                right -= 1
+            
+            if left > right:
+                break
+            
+            arr[left], arr[right] = arr[right], arr[left]
+        
+        arr[start], arr[right] = arr[right], arr[start]
+        
+        stack.append((start, right - 1))
+        stack.append((right + 1, end))
 
     return time.time_ns() - time_ns, iterations
 
-
-def do_quick_sort(arr, low, high, iterations):
-    iterations += 1
-
-    if low < high:
-        pivot = partition(arr, low, high)
-
-        iterations = do_quick_sort(arr, low, pivot - 1, iterations)
-        iterations = do_quick_sort(arr, pivot + 1, high, iterations)
-
-    return iterations
-
-
-def partition(arr, low, high):
-    pivot = arr[high]
-    swap_marker = low - 1
-
-    for i in range(low, high):
-        if arr[i] <= pivot:
-            swap_marker += 1
-
-            arr[i], arr[swap_marker] = arr[swap_marker], arr[i]
-
-    arr[swap_marker + 1], arr[high] = arr[high], arr[swap_marker + 1]
-
-    return swap_marker + 1

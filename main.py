@@ -4,12 +4,12 @@ import random
 from result import Result
 
 SIZES = [1_000, 10_000, 50_000, 100_000, 500_000, 1_000_000]
-SIZES = [10]
+# SIZES = [1_000]
 ALGORITHMS = [
-    ("Bubble sort", algorithms.bubble_sort),
-    ("Bubble sort melhorado", algorithms.improved_bubble_sort),
-    ("Selection sort", algorithms.selection_sort),
-    ("Insertion sort", algorithms.insertion_sort),
+    # ("Bubble sort", algorithms.bubble_sort),
+    # ("Bubble sort melhorado", algorithms.improved_bubble_sort),
+    # ("Selection sort", algorithms.selection_sort),
+    # ("Insertion sort", algorithms.insertion_sort),
     ("Merge sort", algorithms.merge_sort),
     ("Heap sort", algorithms.heap_sort),
     ("Quick sort", algorithms.quick_sort),
