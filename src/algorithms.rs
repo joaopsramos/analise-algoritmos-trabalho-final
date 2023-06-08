@@ -300,6 +300,7 @@ pub fn quick_sort(arr: &mut [i32]) -> i64 {
 
     iterations
 }
+
 pub fn do_quick_sort(arr: &mut [i32], iterations: &mut i64) {
     *iterations += 1;
 
@@ -342,6 +343,72 @@ fn partition(arr: &mut [i32], iterations: &mut i64) -> usize {
     arr.swap(i, len - 1);
 
     i
+}
+
+pub fn improved_quick_sort(arr: &mut [i32]) -> i64 {
+    let mut iterations = 0;
+
+    do_improved_quick_sort(arr, &mut iterations);
+
+    iterations
+}
+
+fn do_improved_quick_sort(arr: &mut [i32], iterations: &mut i64) {
+    *iterations += 1;
+
+    let len = arr.len();
+
+    // Caso base: se o tamanho do array for menor que 2, não é mais necessário ordenar
+    if len < 2 {
+        return;
+    }
+
+    let (mut low, mut high) = (0, len - 1);
+
+    // Faz a partição do array usando o esquema de Hoare e atualiza
+    // os valores de "low" e "high".
+    hoare_partition(arr, &mut low, &mut high, iterations);
+
+    // Faz uma chamada recursiva para ordenar a metade esquerda do array,
+    // se o valor de "high" for maior que zero.
+    if high > 0 {
+        do_improved_quick_sort(&mut arr[0..=high], iterations);
+    }
+
+    // Faz uma chamada recursiva para ordenar a metade direita do array,
+    // se o valor de "low" for menor que o tamanho do array menos um.
+    if low < len - 1 {
+        do_improved_quick_sort(&mut arr[low..], iterations);
+    }
+}
+
+// Implementação da partição de Hoare
+fn hoare_partition(arr: &mut [i32], low: &mut usize, high: &mut usize, iterations: &mut i64) {
+    let pivot = arr[arr.len() / 2];
+
+    while low <= high {
+        *iterations += 1;
+
+        while arr[*low] < pivot {
+            *iterations += 1;
+
+            *low += 1;
+        }
+
+        while arr[*high] > pivot {
+            *iterations += 1;
+
+            *high -= 1;
+        }
+
+        if low <= high {
+            *iterations += 1;
+
+            arr.swap(*low, *high);
+            *low += 1;
+            *high -= 1;
+        }
+    }
 }
 
 #[cfg(test)]
@@ -411,6 +478,14 @@ mod tests {
     fn quick_sort() {
         let mut arr = shuffled_arr();
         super::quick_sort(&mut arr);
+
+        assert_eq!(arr, SORTED_ARR);
+    }
+
+    #[test]
+    fn improved_quick_sort() {
+        let mut arr = shuffled_arr();
+        super::improved_quick_sort(&mut arr);
 
         assert_eq!(arr, SORTED_ARR);
     }
