@@ -18,7 +18,7 @@ const SIZES: [i32; 6] = [1_000, 10_000, 50_000, 100_000, 500_000, 1_000_000];
 
 // Declaração de tipos para ficar menos verboso
 type SorterFn = fn(i32) -> Vec<i32>;
-type AlgorithmFn = fn(&mut [i32]) -> i64;
+type AlgorithmFn = fn(&mut [i32]);
 type Summary = Vec<AlgorithmResult>;
 
 fn main() {
@@ -60,7 +60,7 @@ fn main() {
 
                 // Chama a função que realizará o sort efetivamente, aqui é feito um clone para a
                 // variável `arr` não ser alterada e poder ser usada nas próximas iterações
-                let iterations = algorithm(&mut arr.clone());
+                algorithm(&mut arr.clone());
 
                 // Armazena o resultado
                 results.push(AlgorithmResult {
@@ -69,7 +69,6 @@ fn main() {
                     sort_type: sort_type.to_owned(),
                     duration: now.elapsed(),
                     duration_ms: (now.elapsed().as_nanos()) as f64 / 1000000.0,
-                    iterations,
                 })
             }
         }
@@ -89,13 +88,12 @@ fn save_to_csv(results: Summary) {
 
     for algorithm_result in results {
         let row = format!(
-            "{},{},{},{:.2?},{},{}\n",
+            "{},{},{},{:.2?},{}\n",
             algorithm_result.arr_size,
             algorithm_result.algorithm,
             algorithm_result.sort_type,
             algorithm_result.duration,
             algorithm_result.duration_ms,
-            algorithm_result.iterations
         );
 
         file.write_all(row.as_bytes()).unwrap();

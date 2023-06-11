@@ -6,5 +6,4 @@ pub struct AlgorithmResult {
     pub sort_type: String,
     pub duration: Duration,
     pub duration_ms: f64,
-    pub iterations: i64,
 }

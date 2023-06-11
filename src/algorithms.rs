@@ -1,15 +1,10 @@
-pub fn bubble_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
+pub fn bubble_sort(arr: &mut [i32]) {
     let len = arr.len();
 
     for i in 0..len {
-        iterations += 1;
-
         // Percorre do início até o fim do array
         // diminuindo a quantidade de iterações a cada passo
         for j in 0..(len - i - 1) {
-            iterations += 1;
-
             // Compara o elemento atual com o próximo elemento
             // Se o elemento atual for maior, realiza a troca
             if arr[j] > arr[j + 1] {
@@ -17,27 +12,20 @@ pub fn bubble_sort(arr: &mut [i32]) -> i64 {
             }
         }
     }
-
-    iterations
 }
 
-pub fn improved_bubble_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
+pub fn improved_bubble_sort(arr: &mut [i32]) {
     let mut len = arr.len();
     let mut swapped = true;
 
     // Executa enquanto houver trocas sendo realizadas
     while swapped {
-        iterations += 1;
-
         // Assume que não haverá mais trocas nesta iteração
         swapped = false;
 
         // Percorre o array da segunda posição até o último elemento
         // Começa na segunda posição pois o IF de dentro compara com um elemento antes
         for i in 1..len {
-            iterations += 1;
-
             // Compara o elemento atual com o elemento anterior
             // Se o elemento anterior for maior, realiza a troca
             // Se não houver uma troca, significa que o array já está ordenado
@@ -54,25 +42,17 @@ pub fn improved_bubble_sort(arr: &mut [i32]) -> i64 {
         // pois o maior elemento já foi movido para a última posição
         len -= 1;
     }
-
-    iterations
 }
 
-pub fn selection_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
-
+pub fn selection_sort(arr: &mut [i32]) {
     let len = arr.len();
 
     for i in 0..len {
-        iterations += 1;
-
         // Inicializa a posição mínima como sendo a posição atual
         let mut min = i;
 
         // Percorre o array a partir da próxima posição até o fim
         for j in (i + 1)..len {
-            iterations += 1;
-
             // Compara o elemento atual com o menor elemento encontrado até o momento
             // Se o elemento atual for menor que o atual, atualiza a posição mínima para a posição atual
             if arr[j] < arr[min] {
@@ -83,25 +63,17 @@ pub fn selection_sort(arr: &mut [i32]) -> i64 {
         // Após percorrer o loop interno, realiza a troca do elemento na posição atual com o menor elemento encontrado
         arr.swap(i, min);
     }
-
-    iterations
 }
 
-pub fn improved_selection_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
-
+pub fn improved_selection_sort(arr: &mut [i32]) {
     let mut len = arr.len();
 
     for i in 0..len {
-        iterations += 1;
-
         let mut min_index = i;
         let mut max_index = i;
 
         // Percorre o array a partir da próxima posição até o fim
         for j in i + 1..len {
-            iterations += 1;
-
             // Compara o elemento atual com o menor elemento encontrado até o momento
             // Se o elemento atual for menor, atualiza a posição mínima para a posição atual
             if arr[j] < arr[min_index] {
@@ -140,55 +112,39 @@ pub fn improved_selection_sort(arr: &mut [i32]) -> i64 {
 
     // Inverte a ordem dos elementos no array
     arr.reverse();
-
-    iterations
 }
 
-pub fn insertion_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
-
+pub fn insertion_sort(arr: &mut [i32]) {
     let len = arr.len();
 
     for i in 0..len {
-        iterations += 1;
-
         let mut j = i;
 
         // Executa enquanto a posição atual for maior que 0 e o elemento anterior for maior que o elemento atual
         while j > 0 && arr[j - 1] > arr[j] {
-            iterations += 1;
-
             // Realiza a troca entre o elemento atual e o elemento anterior
             arr.swap(j, j - 1);
             j -= 1;
         }
     }
-
-    iterations
 }
 
-pub fn merge_sort(arr: &mut [i32]) -> i64 {
-    do_merge_sort(arr, &mut 0)
-}
-
-fn do_merge_sort(arr: &mut [i32], iterations: &mut i64) -> i64 {
-    *iterations += 1;
-
+pub fn merge_sort(arr: &mut [i32]) {
     let len = arr.len();
 
     // Caso base: se o tamanho do array for menor que 2, não é mais necessário ordenar
     if len < 2 {
-        return *iterations;
+        return;
     }
 
     // Armazena a posição da metade do array
     let mid = len / 2;
 
     // Chama recursivamente a função do_merge_sort para ordenar a metade esquerda do array
-    do_merge_sort(&mut arr[..mid], iterations);
+    merge_sort(&mut arr[..mid]);
 
     // Chama recursivamente a função do_merge_sort para ordenar a metade direita do array
-    do_merge_sort(&mut arr[mid..], iterations);
+    merge_sort(&mut arr[mid..]);
 
     // Cria um novo vetor chamado "merged" com capacidade já definida sendo igual ao tamanho do array
     let mut merged = Vec::with_capacity(len);
@@ -197,8 +153,6 @@ fn do_merge_sort(arr: &mut [i32], iterations: &mut i64) -> i64 {
 
     // Mescla as duas metades ordenadas do array em um único vetor "merged"
     while i < mid && j < len {
-        *iterations += 1;
-
         // Compara os elementos das duas metades e adiciona o menor elemento em "merged"
         if arr[i] <= arr[j] {
             merged.push(arr[i]);
@@ -211,31 +165,23 @@ fn do_merge_sort(arr: &mut [i32], iterations: &mut i64) -> i64 {
 
     // Adiciona os elementos restantes da metade esquerda em "merged"
     while i < mid {
-        *iterations += 1;
-
         merged.push(arr[i]);
         i += 1;
     }
 
     // Adiciona os elementos restantes da metade direita em "merged"
     while j < len {
-        *iterations += 1;
-
         merged.push(arr[j]);
         j += 1;
     }
 
     // Copia os elementos de "merged" de volta para o array original
     arr.copy_from_slice(&merged[..]);
-
-    *iterations
 }
 
-pub fn heap_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
-
+pub fn heap_sort(arr: &mut [i32]) {
     // Constrói um heap máximo a partir do array
-    build_max_heap(arr, &mut iterations);
+    build_max_heap(arr);
 
     let len = arr.len();
 
@@ -245,30 +191,24 @@ pub fn heap_sort(arr: &mut [i32]) -> i64 {
         arr.swap(0, i);
 
         // Restaura a propriedade de heap máximo no subarray não ordenado
-        max_heapify(&mut arr[..i], 0, &mut iterations);
+        max_heapify(&mut arr[..i], 0);
     }
-
-    iterations
 }
 
-fn build_max_heap(arr: &mut [i32], iterations: &mut i64) {
+fn build_max_heap(arr: &mut [i32]) {
     let len = arr.len();
     let mid = len / 2;
 
     // Percorre os elementos a partir da metade do array até o início, chamando max_heapify em cada elemento
     for i in (0..mid).rev() {
-        *iterations += 1;
-
-        max_heapify(arr, i, iterations);
+        max_heapify(arr, i);
     }
 }
 
-fn max_heapify(arr: &mut [i32], mut i: usize, iterations: &mut i64) {
+fn max_heapify(arr: &mut [i32], mut i: usize) {
     let len = arr.len();
 
     loop {
-        *iterations += 1;
-
         let mut largest = i;
         let left = 2 * i + 1;
         let right = 2 * i + 2;
@@ -293,17 +233,7 @@ fn max_heapify(arr: &mut [i32], mut i: usize, iterations: &mut i64) {
     }
 }
 
-pub fn quick_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
-
-    do_quick_sort(arr, &mut iterations);
-
-    iterations
-}
-
-pub fn do_quick_sort(arr: &mut [i32], iterations: &mut i64) {
-    *iterations += 1;
-
+pub fn quick_sort(arr: &mut [i32]) {
     let len = arr.len();
 
     // Caso base: se o tamanho do array for menor que 2, não é mais necessário ordenar
@@ -312,14 +242,14 @@ pub fn do_quick_sort(arr: &mut [i32], iterations: &mut i64) {
     }
 
     // Realiza a partição do array e obtém o índice do pivô
-    let pivot_index = partition(arr, iterations);
+    let pivot_index = partition(arr);
 
     // Chama recursivamente a função quick_sort para as subpartes do array
-    do_quick_sort(&mut arr[..pivot_index], iterations);
-    do_quick_sort(&mut arr[pivot_index + 1..len], iterations);
+    quick_sort(&mut arr[..pivot_index]);
+    quick_sort(&mut arr[pivot_index + 1..len]);
 }
 
-fn partition(arr: &mut [i32], iterations: &mut i64) -> usize {
+fn partition(arr: &mut [i32]) -> usize {
     let len = arr.len();
     let pivot_index = len / 2;
 
@@ -330,8 +260,6 @@ fn partition(arr: &mut [i32], iterations: &mut i64) -> usize {
 
     // Percorre o array, exceto o último elemento (pivô)
     for j in 0..len - 1 {
-        *iterations += 1;
-
         // Se o elemento atual for menor ou igual ao pivô, troca-o com a posição atual de i
         if arr[j] <= arr[len - 1] {
             arr.swap(i, j);
@@ -345,17 +273,7 @@ fn partition(arr: &mut [i32], iterations: &mut i64) -> usize {
     i
 }
 
-pub fn improved_quick_sort(arr: &mut [i32]) -> i64 {
-    let mut iterations = 0;
-
-    do_improved_quick_sort(arr, &mut iterations);
-
-    iterations
-}
-
-fn do_improved_quick_sort(arr: &mut [i32], iterations: &mut i64) {
-    *iterations += 1;
-
+pub fn improved_quick_sort(arr: &mut [i32]) {
     let len = arr.len();
 
     // Caso base: se o tamanho do array for menor que 2, não é mais necessário ordenar
@@ -367,43 +285,35 @@ fn do_improved_quick_sort(arr: &mut [i32], iterations: &mut i64) {
 
     // Faz a partição do array usando o esquema de Hoare e atualiza
     // os valores de "low" e "high".
-    hoare_partition(arr, &mut low, &mut high, iterations);
+    hoare_partition(arr, &mut low, &mut high);
 
     // Faz uma chamada recursiva para ordenar a metade esquerda do array,
     // se o valor de "high" for maior que zero.
     if high > 0 {
-        do_improved_quick_sort(&mut arr[0..=high], iterations);
+        improved_quick_sort(&mut arr[0..=high]);
     }
 
     // Faz uma chamada recursiva para ordenar a metade direita do array,
     // se o valor de "low" for menor que o tamanho do array menos um.
     if low < len - 1 {
-        do_improved_quick_sort(&mut arr[low..], iterations);
+        improved_quick_sort(&mut arr[low..]);
     }
 }
 
 // Implementação da partição de Hoare
-fn hoare_partition(arr: &mut [i32], low: &mut usize, high: &mut usize, iterations: &mut i64) {
+fn hoare_partition(arr: &mut [i32], low: &mut usize, high: &mut usize) {
     let pivot = arr[arr.len() / 2];
 
     while low <= high {
-        *iterations += 1;
-
         while arr[*low] < pivot {
-            *iterations += 1;
-
             *low += 1;
         }
 
         while arr[*high] > pivot {
-            *iterations += 1;
-
             *high -= 1;
         }
 
         if low <= high {
-            *iterations += 1;
-
             arr.swap(*low, *high);
             *low += 1;
             *high -= 1;
