@@ -1,29 +1,217 @@
-Tamanho,Nome,Tipo de ordenação,Duração (ms),Iterações
-10,Bubble sort,Ordenado,0.011371,90
-10,Bubble sort melhorado,Ordenado,0.002324,10
-10,Selection sort,Ordenado,0.008877,55
-10,Insertion sort,Ordenado,0.001904,10
-10,Merge sort,Ordenado,0.020539,34
-10,Heap sort,Ordenado,0.022763,28
-10,Quick sort,Ordenado,0.019227,19
-10,Bubble sort,Invertido,0.017242,90
-10,Bubble sort melhorado,Invertido,0.013596,54
-10,Selection sort,Invertido,0.009287,55
-10,Insertion sort,Invertido,0.012684,55
-10,Merge sort,Invertido,0.022142,38
-10,Heap sort,Invertido,0.015559,28
-10,Quick sort,Invertido,0.015329,19
-10,Bubble sort,Quase ordenado,0.011792,90
-10,Bubble sort melhorado,Quase ordenado,0.008716,54
-10,Selection sort,Quase ordenado,0.008756,55
-10,Insertion sort,Quase ordenado,0.002875,11
-10,Merge sort,Quase ordenado,0.022091,35
-10,Heap sort,Quase ordenado,0.020528,28
-10,Quick sort,Quase ordenado,0.015749,17
-10,Bubble sort,Desordenado,0.014477,90
-10,Bubble sort melhorado,Desordenado,0.011502,54
-10,Selection sort,Desordenado,0.008867,55
-10,Insertion sort,Desordenado,0.007705,32
-10,Merge sort,Desordenado,0.024215,41
-10,Heap sort,Desordenado,0.017493,28
-10,Quick sort,Desordenado,0.011692,15
+Tamanho,Algoritmo,Tipo de ordenação,Duração,Duração (ms),Iterações
+1000,Merge sort,Ordenado,27.04µs,0.027081,11975
+1000,Heap sort,Ordenado,30.56µs,0.030587,10708
+1000,Quick sort,Ordenado,7.77µs,0.007785,9010
+1000,Quick sort melhorado,Ordenado,5.20µs,0.00522,9520
+1000,Merge sort,Invertido,25.55µs,0.025579,11975
+1000,Heap sort,Invertido,43.45µs,0.043473,9316
+1000,Quick sort,Invertido,16.09µs,0.016111,9531
+1000,Quick sort melhorado,Invertido,7.27µs,0.007293,9527
+1000,Merge sort,Quase ordenado,36.94µs,0.03697,11975
+1000,Heap sort,Quase ordenado,49.86µs,0.049894,10604
+1000,Quick sort,Quase ordenado,15.76µs,0.01578,9901
+1000,Quick sort melhorado,Quase ordenado,13.20µs,0.013225,10790
+1000,Merge sort,Aleatório,50.13µs,0.050145,11975
+1000,Heap sort,Aleatório,41.18µs,0.041208,10047
+1000,Quick sort,Aleatório,29.44µs,0.029456,13508
+1000,Quick sort melhorado,Aleatório,33.11µs,0.033142,14251
+10000,Merge sort,Ordenado,285.33µs,0.28536,153615
+10000,Heap sort,Ordenado,374.77µs,0.3748,141956
+10000,Quick sort,Ordenado,73.77µs,0.0738,125440
+10000,Quick sort melhorado,Ordenado,56.63µs,0.056657,131343
+10000,Merge sort,Invertido,278.63µs,0.278647,153615
+10000,Heap sort,Invertido,393.53µs,0.393546,126696
+10000,Quick sort,Invertido,96.61µs,0.096633,130219
+10000,Quick sort melhorado,Invertido,49.82µs,0.049845,131357
+10000,Merge sort,Quase ordenado,364.12µs,0.364149,153615
+10000,Heap sort,Quase ordenado,405.99µs,0.406009,140049
+10000,Quick sort,Quase ordenado,158.81µs,0.158831,136775
+10000,Quick sort melhorado,Quase ordenado,151.08µs,0.151096,144810
+10000,Merge sort,Aleatório,610.71µs,0.610736,153615
+10000,Heap sort,Aleatório,566.96µs,0.566984,134138
+10000,Quick sort,Aleatório,354.50µs,0.354521,161766
+10000,Quick sort melhorado,Aleatório,381.55µs,0.381573,184841
+50000,Merge sort,Ordenado,1.56ms,1.562709,884463
+50000,Heap sort,Ordenado,1.95ms,1.952728,823304
+50000,Quick sort,Ordenado,444.76µs,0.444792,750016
+50000,Quick sort melhorado,Ordenado,329.36µs,0.329393,782782
+50000,Merge sort,Invertido,1.57ms,1.570503,884463
+50000,Heap sort,Invertido,2.07ms,2.067424,748892
+50000,Quick sort,Invertido,516.62µs,0.516648,769169
+50000,Quick sort melhorado,Invertido,286.24µs,0.286272,782795
+50000,Merge sort,Quase ordenado,2.13ms,2.133069,884463
+50000,Heap sort,Quase ordenado,2.29ms,2.29211,817409
+50000,Quick sort,Quase ordenado,932.23µs,0.932245,811538
+50000,Quick sort melhorado,Quase ordenado,883.62µs,0.883644,868281
+50000,Merge sort,Aleatório,3.48ms,3.484948,884463
+50000,Heap sort,Aleatório,3.15ms,3.150956,787559
+50000,Quick sort,Aleatório,2.05ms,2.051354,1001851
+50000,Quick sort melhorado,Aleatório,2.18ms,2.184005,1060582
+100000,Merge sort,Ordenado,3.23ms,3.233843,1868927
+100000,Heap sort,Ordenado,4.03ms,4.034369,1750854
+100000,Quick sort,Ordenado,941.69µs,0.941713,1600017
+100000,Quick sort melhorado,Ordenado,566.18µs,0.566212,1665551
+100000,Merge sort,Invertido,3.26ms,3.259972,1868927
+100000,Heap sort,Invertido,4.25ms,4.248874,1597434
+100000,Quick sort,Invertido,1.07ms,1.070447,1638970
+100000,Quick sort melhorado,Invertido,604.71µs,0.604735,1665565
+100000,Merge sort,Quase ordenado,4.50ms,4.495072,1868927
+100000,Heap sort,Quase ordenado,4.73ms,4.725657,1734117
+100000,Quick sort,Quase ordenado,2.15ms,2.148799,1757096
+100000,Quick sort melhorado,Quase ordenado,1.80ms,1.801993,1848263
+100000,Merge sort,Aleatório,7.35ms,7.35245,1868927
+100000,Heap sort,Aleatório,6.76ms,6.759359,1675054
+100000,Quick sort,Aleatório,4.34ms,4.340929,2092802
+100000,Quick sort melhorado,Aleatório,4.57ms,4.566607,2239146
+500000,Merge sort,Ordenado,17.71ms,17.707397,10475711
+500000,Heap sort,Ordenado,22.49ms,22.48809,9855700
+500000,Quick sort,Ordenado,5.62ms,5.622065,9000019
+500000,Quick sort melhorado,Ordenado,3.15ms,3.150064,9262161
+500000,Merge sort,Invertido,17.38ms,17.37615,10475711
+500000,Heap sort,Invertido,21.97ms,21.966432,9168450
+500000,Quick sort,Invertido,5.82ms,5.821464,9317204
+500000,Quick sort melhorado,Invertido,2.89ms,2.891735,9262177
+500000,Merge sort,Quase ordenado,24.04ms,24.037654,10475711
+500000,Heap sort,Quase ordenado,26.08ms,26.077156,9791198
+500000,Quick sort,Quase ordenado,12.18ms,12.17864,10176765
+500000,Quick sort melhorado,Quase ordenado,10.60ms,10.595672,10602643
+500000,Merge sort,Aleatório,41.82ms,41.820095,10475711
+500000,Heap sort,Aleatório,39.74ms,39.743011,9524331
+500000,Quick sort,Aleatório,24.66ms,24.655774,13173377
+500000,Quick sort melhorado,Aleatório,25.81ms,25.806003,13471103
+1000000,Merge sort,Ordenado,36.58ms,36.578879,21951423
+1000000,Heap sort,Ordenado,43.97ms,43.969604,20787792
+1000000,Quick sort,Ordenado,10.57ms,10.565165,19000020
+1000000,Quick sort melhorado,Ordenado,5.71ms,5.71417,19524306
+1000000,Merge sort,Invertido,38.82ms,38.816137,21951423
+1000000,Heap sort,Invertido,45.93ms,45.932641,19333408
+1000000,Quick sort,Invertido,11.80ms,11.795624,19635911
+1000000,Quick sort melhorado,Invertido,5.98ms,5.97799,19524323
+1000000,Merge sort,Quase ordenado,51.75ms,51.747822,21951423
+1000000,Heap sort,Quase ordenado,56.26ms,56.258994,20615789
+1000000,Quick sort,Quase ordenado,23.50ms,23.495628,20841164
+1000000,Quick sort melhorado,Quase ordenado,20.58ms,20.583594,22101423
+1000000,Merge sort,Aleatório,87.49ms,87.488304,21951423
+1000000,Heap sort,Aleatório,89.32ms,89.317277,20049140
+1000000,Quick sort,Aleatório,51.42ms,51.42497,26149949
+1000000,Quick sort melhorado,Aleatório,52.07ms,52.072698,27762912
+1000,Selection sort,Ordenado,283.26µs,0.283314,500500
+1000,Selection sort melhorado,Ordenado,265.16µs,0.265201,251000
+1000,Selection sort,Invertido,360.37µs,0.36041,500500
+1000,Selection sort melhorado,Invertido,309.84µs,0.309885,251000
+1000,Selection sort,Quase ordenado,370.03µs,0.370069,500500
+1000,Selection sort melhorado,Quase ordenado,312.48µs,0.31253,251000
+1000,Selection sort,Aleatório,409.64µs,0.409684,500500
+1000,Selection sort melhorado,Aleatório,391.59µs,0.39163,251000
+10000,Selection sort,Ordenado,26.74ms,26.741782,50005000
+10000,Selection sort melhorado,Ordenado,18.12ms,18.116112,25010000
+10000,Selection sort,Invertido,24.68ms,24.684619,50005000
+10000,Selection sort melhorado,Invertido,19.25ms,19.253319,25010000
+10000,Selection sort,Quase ordenado,22.16ms,22.160595,50005000
+10000,Selection sort melhorado,Quase ordenado,18.00ms,17.997919,25010000
+10000,Selection sort,Aleatório,22.51ms,22.510095,50005000
+10000,Selection sort melhorado,Aleatório,22.60ms,22.596327,25010000
+50000,Selection sort,Ordenado,558.61ms,558.605794,1250025000
+50000,Selection sort melhorado,Ordenado,413.05ms,413.047442,625050000
+50000,Selection sort,Invertido,580.94ms,580.941866,1250025000
+50000,Selection sort melhorado,Invertido,482.98ms,482.97672,625050000
+50000,Selection sort,Quase ordenado,553.95ms,553.952253,1250025000
+50000,Selection sort melhorado,Quase ordenado,445.26ms,445.25563,625050000
+50000,Selection sort,Aleatório,559.14ms,559.144618,1250025000
+50000,Selection sort melhorado,Aleatório,554.74ms,554.736912,625050000
+100000,Selection sort,Ordenado,2.24s,2235.967641,5000050000
+100000,Selection sort melhorado,Ordenado,1.68s,1676.237542,2500100000
+100000,Selection sort,Invertido,2.37s,2369.373392,5000050000
+100000,Selection sort melhorado,Invertido,1.94s,1936.231238,2500100000
+100000,Selection sort,Quase ordenado,2.23s,2226.74015,5000050000
+100000,Selection sort melhorado,Quase ordenado,1.78s,1776.880515,2500100000
+100000,Selection sort,Aleatório,2.26s,2264.92774,5000050000
+100000,Selection sort melhorado,Aleatório,2.20s,2201.726891,2500100000
+500000,Selection sort,Ordenado,59.46s,59461.99644,125000250000
+500000,Selection sort melhorado,Ordenado,44.07s,44072.195302,62500500000
+500000,Selection sort,Invertido,61.93s,61925.591101,125000250000
+500000,Selection sort melhorado,Invertido,51.75s,51748.78045,62500500000
+500000,Selection sort,Quase ordenado,59.73s,59725.226007,125000250000
+500000,Selection sort melhorado,Quase ordenado,45.00s,44998.689208,62500500000
+500000,Selection sort,Aleatório,56.76s,56764.008248,125000250000
+500000,Selection sort melhorado,Aleatório,57.20s,57202.029135,62500500000
+1000000,Selection sort melhorado,Ordenado,168.41s,168406.097728,250001000000
+1000000,Selection sort melhorado,Invertido,225.49s,225493.464668,250001000000
+1000000,Selection sort melhorado,Quase ordenado,179.23s,179227.588491,250001000000
+1000000,Selection sort melhorado,Aleatório,223.24s,223236.232672,250001000000
+1000000,Selection sort,Ordenado,222.97s,222973.114171,500000500000
+1000000,Selection sort,Invertido,231.97s,231966.963868,500000500000
+1000000,Selection sort,Quase ordenado,224.19s,224188.615049,500000500000
+1000000,Selection sort,Aleatório,223.22s,223224.23568,500000500000
+1000,Insertion sort,Ordenado,1.95µs,0.001993,1000
+1000,Insertion sort,Invertido,219.94µs,0.219966,500500
+1000,Insertion sort,Quase ordenado,14.73µs,0.014748,28900
+1000,Insertion sort,Aleatório,114.16µs,0.114186,252786
+10000,Insertion sort,Ordenado,14.50µs,0.014527,10000
+10000,Insertion sort,Invertido,22.13ms,22.126437,50005000
+10000,Insertion sort,Quase ordenado,1.26ms,1.2637,2810808
+10000,Insertion sort,Aleatório,11.17ms,11.16729,25038741
+50000,Insertion sort,Ordenado,88.65µs,0.088678,50000
+50000,Insertion sort,Invertido,565.55ms,565.552919,1250025000
+50000,Insertion sort,Quase ordenado,32.93ms,32.930328,69484212
+50000,Insertion sort,Aleatório,281.35ms,281.353975,629319105
+100000,Insertion sort,Ordenado,181.99µs,0.182024,100000
+100000,Insertion sort,Invertido,2.25s,2251.651792,5000050000
+100000,Insertion sort,Quase ordenado,124.16ms,124.156489,277729313
+100000,Insertion sort,Aleatório,1.13s,1131.935617,2502549350
+500000,Insertion sort,Ordenado,867.17µs,0.867211,500000
+500000,Insertion sort,Invertido,56.02s,56020.982035,125000250000
+500000,Insertion sort,Quase ordenado,3.11s,3109.423901,6934491469
+500000,Insertion sort,Aleatório,28.03s,28030.859101,62611964984
+1000000,Insertion sort,Ordenado,1.34ms,1.338742,1000000
+1000000,Insertion sort,Invertido,229.64s,229640.210774,500000500000
+1000000,Insertion sort,Quase ordenado,12.75s,12751.171539,27778520772
+1000000,Insertion sort,Aleatório,115.10s,115102.979897,250026546054
+1000,Bubble sort,Ordenado,220.47µs,0.220517,500500
+1000,Bubble sort melhorado,Ordenado,652.00ns,0.000682,1000
+1000,Bubble sort,Invertido,327.00µs,0.32703,500500
+1000,Bubble sort melhorado,Invertido,327.14µs,0.32716,500500
+1000,Bubble sort,Quase ordenado,246.63µs,0.246647,500500
+1000,Bubble sort melhorado,Quase ordenado,134.64µs,0.134666,254449
+1000,Bubble sort,Aleatório,410.33µs,0.410347,500500
+1000,Bubble sort melhorado,Aleatório,366.60µs,0.366624,500380
+10000,Bubble sort,Ordenado,21.66ms,21.657708,50005000
+10000,Bubble sort melhorado,Ordenado,6.22µs,0.006252,10000
+10000,Bubble sort,Invertido,27.67ms,27.669352,50005000
+10000,Bubble sort melhorado,Invertido,32.87ms,32.871246,50005000
+10000,Bubble sort,Quase ordenado,23.19ms,23.194127,50005000
+10000,Bubble sort melhorado,Quase ordenado,14.15ms,14.151511,27368644
+10000,Bubble sort,Aleatório,37.28ms,37.2773,50005000
+10000,Bubble sort melhorado,Aleatório,34.26ms,34.263722,50004594
+50000,Bubble sort,Ordenado,545.50ms,545.498889,1250025000
+50000,Bubble sort melhorado,Ordenado,60.82µs,0.060845,50000
+50000,Bubble sort,Invertido,654.26ms,654.259732,1250025000
+50000,Bubble sort melhorado,Invertido,839.14ms,839.13797,1250025000
+50000,Bubble sort,Quase ordenado,567.94ms,567.936904,1250025000
+50000,Bubble sort melhorado,Quase ordenado,341.93ms,341.925061,691593510
+50000,Bubble sort,Aleatório,1.77s,1766.053139,1250025000
+50000,Bubble sort melhorado,Aleatório,1.73s,1728.092813,1250023775
+100000,Bubble sort,Ordenado,2.29s,2290.104119,5000050000
+100000,Bubble sort melhorado,Ordenado,137.70µs,0.137741,100000
+100000,Bubble sort,Invertido,2.76s,2760.376115,5000050000
+100000,Bubble sort melhorado,Invertido,3.43s,3431.68952,5000050000
+100000,Bubble sort,Quase ordenado,2.30s,2299.017871,5000050000
+100000,Bubble sort melhorado,Quase ordenado,1.62s,1619.584961,2767560390
+100000,Bubble sort,Aleatório,8.15s,8152.19432,5000050000
+100000,Bubble sort melhorado,Aleatório,8.41s,8410.842282,5000012050
+500000,Bubble sort,Ordenado,55.15s,55146.463691,125000250000
+500000,Bubble sort melhorado,Ordenado,722.01µs,0.722038,500000
+500000,Bubble sort,Invertido,65.51s,65514.803121,125000250000
+500000,Bubble sort melhorado,Invertido,83.72s,83717.638946,125000250000
+500000,Bubble sort,Quase ordenado,72.74s,72738.754836,125000250000
+500000,Bubble sort melhorado,Quase ordenado,49.65s,49648.516737,69240785460
+500000,Bubble sort,Aleatório,217.22s,217220.356955,125000250000
+500000,Bubble sort melhorado,Aleatório,226.56s,226557.842861,124999628945
+1000000,Bubble sort,Ordenado,221.15s,221149.388313,500000500000
+1000000,Bubble sort melhorado,Ordenado,1.15ms,1.154876,1000000
+1000000,Bubble sort,Invertido,262.20s,262200.311195,500000500000
+1000000,Bubble sort melhorado,Invertido,336.65s,336649.064264,500000500000
+1000000,Bubble sort,Quase ordenado,293.55s,293550.181677,500000500000
+1000000,Bubble sort melhorado,Quase ordenado,199.35s,199353.657368,276795972409
+1000000,Bubble sort,Aleatório,867.00s,866995.110835,500000500000
+1000000,Bubble sort melhorado,Aleatório,898.80s,898800.814051,499998202704
